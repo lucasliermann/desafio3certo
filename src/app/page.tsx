@@ -1,35 +1,38 @@
-interface IUsers {
-  name: string,
-  age: number,
-  email: string
-}
-
 
 export default function Home() {
 
-  const users:IUsers[] = [
-    { name: "bernardo", age: 354, email: "fdoase" },
-    { name: "354", age: 34, email: "sdfgdfg" },
-    {name: "blabalbal", age: 454, email: "fgfhgth"},
-    {name: "dfgfg", age: 454, email: "gfhfgh"}
+  let marketList = [
+    {
+      name: "abacaxi", 
+      qnt: 2,
+      unitPrice: 2.5
+    },  
+    {
+      name: "laranja", 
+      qnt: 3,
+      unitPrice: 1
+    },
+
   ]
-
-  const newUSer = {
-    name: "lucas",
-    age: 807,
-    email: "SDFDFGFHF"
-  }
-
-  
-
+  console.log(marketList)
   return (
     <>
-      <header className="font-mono flex justify-center text-4xl mt-4">TO DO LIST</header>
-      <p>{users.map((user) => (
-        <li key={user.email}>
-          {user.name}, {user.email}
-        </li>
-      ))}</p>
+      <header className="">
+        <h1>Lista de compras</h1>
+      </header>
+
+      <div>
+        <ul>
+          {marketList.map( (product)=> (
+            <li>
+              <h1>título: {product.name}</h1>
+              <p>quantidade: {product.qnt}</p>
+              <p>preço: {product.unitPrice}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+
     </>
   )
 }

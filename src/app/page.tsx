@@ -1,3 +1,4 @@
+"use client"
 
 export default function Home() {
 
@@ -12,18 +13,17 @@ export default function Home() {
       qnt: 3,
       unitPrice: 1
     },
-
   ]
-  console.log(marketList)
+
   return (
     <>
-      <header className="">
+      <header className="flex justify-center w-screen bg-gradient-to-t to-green-300 from-green-400 h-24 text-2xl font-bold items-center">
         <h1>Lista de compras</h1>
       </header>
 
       <div>
         <ul>
-          {marketList.map( (product)=> (
+          {marketList.map((product) => (
             <li>
               <h1>título: {product.name}</h1>
               <p>quantidade: {product.qnt}</p>
@@ -32,6 +32,16 @@ export default function Home() {
           ))}
         </ul>
       </div>
+
+      <div className="flex flex-col w-[50%]">
+        <input placeholder="item" className=" border border-black" type="text" />
+        <input placeholder="quantidade" className=" border border-black" type="text" />
+        <input placeholder="preço" className=" border border-black" type="text" />
+        <button onClick={() => {marketList = [...marketList, {name:"xibaca", qnt:1, unitPrice:9999.99}]; console.log(marketList);
+        }}>Adicionar</button>
+      </div>
+      
+        
 
     </>
   )
